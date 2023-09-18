@@ -2,6 +2,8 @@ import pandas as pd
 import re
 import os  # Import the os module
 
+# pip install openpyxl to the environment
+
 # Function to generate email addresses
 def generate_email(name):
     cleaned_name = re.sub(r'[^a-zA-Z\s]', '', name)
