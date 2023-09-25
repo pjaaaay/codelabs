@@ -3,7 +3,7 @@ import re
 import os
 import logging
 
-# Specify the output folder
+# The output folder
 output_folder = 'output'
 
 # Ensure the output folder exists, create it if it doesn't
