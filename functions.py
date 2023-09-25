@@ -17,6 +17,9 @@ logging.basicConfig(filename=log_file_path, level=logging.INFO)
 male_students = []
 female_students = []
 
+# List to store students with special characters
+students_with_special_characters = []
+
 # Function to generate email addresses
 def generate_email(name):
     cleaned_name = re.sub(r'[^a-zA-Z\s]', '', name)
@@ -43,6 +46,17 @@ def separate_students_by_gender(df):
             male_students.append(student_name)
         elif gender == 'F':
             female_students.append(student_name)
+
+# Function to list students with special characters using regex
+def list_students_with_special_characters(df):
+    students_with_special_characters.clear()
+
+    for index, row in df.iterrows():
+        student_name = row['Student Name']
+
+        # Check if the student name contains special characters using regex
+        if re.search(r'[^a-zA-Z\s]', student_name):
+            students_with_special_characters.append(student_name)
 
 # Function to process a file and save the result
 def process_file(file_path, output_folder):
@@ -92,6 +106,10 @@ def process_file(file_path, output_folder):
         logging.info(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
         logging.info(f"Number of Male Students: {len(male_students)}")
         logging.info(f"Number of Female Students: {len(female_students)}")
+
+        # List students with special characters
+        list_students_with_special_characters(df)
+        logging.info(f"Students with special characters: {', '.join(students_with_special_characters)}")
 
     except Exception as e:
         # Log errors
