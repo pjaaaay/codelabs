@@ -13,6 +13,13 @@ os.makedirs(output_folder, exist_ok=True)
 log_file_path = os.path.join(output_folder, 'computation_log.txt')
 logging.basicConfig(filename=log_file_path, level=logging.INFO)
 
+# Lists to store male and female students
+male_students = []
+female_students = []
+
+# List to store students with special characters
+students_with_special_characters = []
+
 # Function to generate email addresses
 def generate_email(name):
     cleaned_name = re.sub(r'[^a-zA-Z\s]', '', name)
@@ -24,6 +31,32 @@ def generate_email(name):
     else:
         email = f"{name_parts[0].lower()}@gmail.com"
     return email
+
+# Function to separate students based on gender
+def separate_students_by_gender(df):
+    male_students.clear()
+    female_students.clear()
+
+    for index, row in df.iterrows():
+        gender = row['Gender']
+        student_name = row['Student Name']
+
+        # Separate students based on gender and add their names to the respective lists
+        if gender == 'M':
+            male_students.append(student_name)
+        elif gender == 'F':
+            female_students.append(student_name)
+
+# Function to list students with special characters using regex
+def list_students_with_special_characters(df):
+    students_with_special_characters.clear()
+
+    for index, row in df.iterrows():
+        student_name = row['Student Name']
+
+        # Check if the student name contains special characters using regex
+        if re.search(r'[^a-zA-Z\s]', student_name):
+            students_with_special_characters.append(student_name)
 
 # Function to process a file and save the result
 def process_file(file_path, output_folder):
@@ -45,6 +78,7 @@ def process_file(file_path, output_folder):
 
             email_address = generate_email(student_name)
             gender = row['Gender']
+
             email_data.append({'No.': no, 'Student Number': student_number, 'Student Name': student_name, 'DoB': dob, 'Email Address': email_address, 'Gender': gender})
 
         # Create a new DataFrame from the list of dictionaries
@@ -67,9 +101,15 @@ def process_file(file_path, output_folder):
         result_df.to_csv(result_csv_file_path, index=False)
         result_df.to_csv(result_tsv_file_path, index=False, sep='\t')
 
+        # Log the counts of male and female students
+        separate_students_by_gender(df)
         logging.info(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
+        logging.info(f"Number of Male Students: {len(male_students)}")
+        logging.info(f"Number of Female Students: {len(female_students)}")
 
-        print(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
+        # List students with special characters
+        list_students_with_special_characters(df)
+        logging.info(f"Students with special characters: {', '.join(students_with_special_characters)}")
 
     except Exception as e:
         # Log errors
