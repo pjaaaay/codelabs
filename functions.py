@@ -1,8 +1,10 @@
 import pandas as pd
 import re
-import os  # Import the os module
+import os
+import logging  
 
-# pip install openpyxl to the environment
+# Configure logging
+logging.basicConfig(filename='computation_log.txt', level=logging.INFO)
 
 # Function to generate email addresses
 def generate_email(name):
@@ -18,42 +20,52 @@ def generate_email(name):
 
 # Function to process a file and save the result
 def process_file(file_path, output_folder):
-    # Load the Excel file into a DataFrame
-    df = pd.read_excel(file_path)
+    try:
+        # Load the Excel file into a DataFrame
+        df = pd.read_excel(file_path)
 
-    # Create a list of dictionaries containing student names and email addresses
-    email_data = []
-    for index, row in df.iterrows():
-        no = row['No.']
-        student_number = row['Student Number']
-        student_name = row['Student Name']
-        
-        # Parse the "DoB" column as a date
-        dob = pd.to_datetime(row['DoB'], format='%Y-%m-%d', errors='coerce')
-        if pd.notna(dob):
-            dob = dob.strftime('%Y-%m-%d')
-        
-        email_address = generate_email(student_name)
-        gender = row['Gender']
-        email_data.append({'No.': no, 'Student Number': student_number, 'Student Name': student_name, 'DoB': dob, 'Email Address': email_address, 'Gender' : gender})
+        # Create a list of dictionaries containing student names and email addresses
+        email_data = []
+        for index, row in df.iterrows():
+            no = row['No.']
+            student_number = row['Student Number']
+            student_name = row['Student Name']
 
-    # Create a new DataFrame from the list of dictionaries
-    result_df = pd.DataFrame(email_data)
+            # Parse the "DoB" column as a date
+            dob = pd.to_datetime(row['DoB'], format='%Y-%m-%d', errors='coerce')
+            if pd.notna(dob):
+                dob = dob.strftime('%Y-%m-%d')
 
-    # Remove duplicate email addresses
-    result_df = result_df.drop_duplicates(subset=['Email Address'])
+            email_address = generate_email(student_name)
+            gender = row['Gender']
+            email_data.append({'No.': no, 'Student Number': student_number, 'Student Name': student_name, 'DoB': dob, 'Email Address': email_address, 'Gender': gender})
 
-    # Get the filename without the extension
-    file_name = os.path.splitext(os.path.basename(file_path))[0]
+        # Create a new DataFrame from the list of dictionaries
+        result_df = pd.DataFrame(email_data)
 
-    # Specify the result file name and path
-    result_file_name = f'output-{file_name}.xlsx'
-    result_file_path = os.path.join(output_folder, result_file_name)
+        # Remove duplicate email addresses
+        result_df = result_df.drop_duplicates(subset=['Email Address'])
 
-    # Save the result to a new Excel file under the 'output' folder
-    result_df.to_excel(result_file_path, index=False)
+        # Get the filename without the extension
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
 
-    print(f"Email addresses generated and saved to {result_file_path}")
+        # Specify the result file names and paths
+        result_csv_file_name = f'output-{file_name}.csv'
+        result_csv_file_path = os.path.join(output_folder, result_csv_file_name)
+
+        result_tsv_file_name = f'output-{file_name}.tsv'
+        result_tsv_file_path = os.path.join(output_folder, result_tsv_file_name)
+
+        # Save the result to CSV and TSV files under the 'output' folder
+        result_df.to_csv(result_csv_file_path, index=False)
+        result_df.to_csv(result_tsv_file_path, index=False, sep='\t')
+
+        logging.info(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
+        print(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
+
+    except Exception as e:
+        logging.error(f"Error processing file {file_path}: {str(e)}")
+        print(f"Error processing file {file_path}: {str(e)}")
 
 # Specify the output folder
 output_folder = 'output'
