@@ -1,10 +1,17 @@
 import pandas as pd
 import re
 import os
-import logging  
+import logging
 
-# Configure logging
-logging.basicConfig(filename='computation_log.txt', level=logging.INFO)
+# Specify the output folder
+output_folder = 'output'
+
+# Ensure the output folder exists, create it if it doesn't
+os.makedirs(output_folder, exist_ok=True)
+
+# Configure logging and specify the log file path under the output folder
+log_file_path = os.path.join(output_folder, 'computation_log.txt')
+logging.basicConfig(filename=log_file_path, level=logging.INFO)
 
 # Function to generate email addresses
 def generate_email(name):
@@ -61,14 +68,13 @@ def process_file(file_path, output_folder):
         result_df.to_csv(result_tsv_file_path, index=False, sep='\t')
 
         logging.info(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
+
         print(f"Email addresses generated and saved to {result_csv_file_path} and {result_tsv_file_path}")
 
     except Exception as e:
+        # Log errors
         logging.error(f"Error processing file {file_path}: {str(e)}")
         print(f"Error processing file {file_path}: {str(e)}")
-
-# Specify the output folder
-output_folder = 'output'
 
 # Process the first file
 file_path_3B = 'test-files-3B.xlsx'
