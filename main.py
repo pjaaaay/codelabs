@@ -9,7 +9,7 @@ class3B = loadsheet("./Test Files.xlsx", "3B")
 class3C = loadsheet("./Test Files.xlsx", "3C")'''
 
 # Generate email addresses for students
-functions = functions
+email_addresses = functions.generate_email
 
 
 
