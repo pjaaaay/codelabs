@@ -1,2 +1,4 @@
 INFO:root:Email addresses generated and saved to output\output-test-files-3B.csv and output\output-test-files-3B.tsv
 INFO:root:Email addresses generated and saved to output\output-test-files-3C.csv and output\output-test-files-3C.tsv
+INFO:root:Email addresses generated and saved to output\output-test-files-3B.csv and output\output-test-files-3B.tsv
+INFO:root:Email addresses generated and saved to output\output-test-files-3C.csv and output\output-test-files-3C.tsv
