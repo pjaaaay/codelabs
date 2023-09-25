@@ -14,4 +14,5 @@ email_addresses = functions.generate_email
 # Saving Output Files as tsv and csn files
 file_save = functions.process_file
 
-# 
+# Gender Seperation
+gender_seperation = functions.separate_students_by_gender
