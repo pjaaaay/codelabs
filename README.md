@@ -53,12 +53,7 @@ The purpose of this project is to:
 
 ## Usage
 
-1. Run the script to process the data on your IDE's command line:
-
-```sh
-    python main.py
-```
-
+1. Run main.py to process the data.
 2. Check the generated files in the "output" folder in the root directory.
 
 ## Contributing
