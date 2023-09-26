@@ -39,7 +39,7 @@ The purpose of this project is to:
    myenv\Scripts\activate
  ```
 
-On Mac:
+   On Mac:
 
  ```sh 
    source myenv/bin/activate
