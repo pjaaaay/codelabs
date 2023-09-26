@@ -47,9 +47,9 @@ The purpose of this project is to:
 
 4. Install project dependencies:
 
-  ```sh
+ ```sh
    pip install -r requirements.txt
-  ```
+ ```
 
 ## Usage
 
@@ -59,7 +59,7 @@ The purpose of this project is to:
     python main.py
 ```
 
-2. Check the generated files in the "output" folder.
+2. Check the generated files in the "output" folder in the root directory.
 
 ## Contributing
 
