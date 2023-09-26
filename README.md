@@ -45,7 +45,7 @@ The purpose of this project is to:
    source myenv/bin/activate
  ```
 
-4. Install project dependencies:
+4. Install project dependencies on your virtual environment:
 
  ```sh
    pip install -r requirements.txt
