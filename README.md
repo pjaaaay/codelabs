@@ -19,31 +19,36 @@ The purpose of this project is to:
 
 ## Installation
 
-1. Fork the project to create a copy of the project in your own Github account.
-2. Clone the forked repository to your local machine:
-3. Navigate to the project directory and create a virtual environment on your local machine: 
+1. Clone the forked repository to your local machine.
 
  ```sh 
-  python3 -m venv myenv
+   https://github.com/mikemwai/codelabs.git
  ```
 
-4. Activate youur virtual environment:
-On Windows:
+2. Navigate to the project directory and create a virtual environment on your local machine: 
 
  ```sh 
-  myenv\Scripts\activate
+   python3 -m venv myenv
  ```
 
- On Mac:
+3. Activate youur virtual environment:
+
+   On Windows:
 
  ```sh 
-  source myenv/bin/activate
+   myenv\Scripts\activate
  ```
 
-5. Install project dependencies:
+   On Mac:
+
+ ```sh 
+   source myenv/bin/activate
+ ```
+
+4. Install project dependencies:
 
   ```sh
-    pip install -r requirements.txt
+   pip install -r requirements.txt
   ```
 
 ## Usage
@@ -51,14 +56,19 @@ On Windows:
 1. Run the script to process the data on your IDE's command line:
 
 ```sh
-python main.py
+    python main.py
 ```
 
 2. Check the generated files in the "output" folder.
 
 ## Contributing
 
-If you'd like to contribute to this project, please fork the repository, create a new branch for your changes, and submit a pull request. Contributions, bug reports, and feature requests are welcome!
+If you'd like to contribute to this project:
+- Please fork the repository
+- Create a new branch for your changes,
+- Submit a pull request. 
+
+Contributions, bug reports, and feature requests are welcome!
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
