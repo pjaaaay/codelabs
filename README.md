@@ -17,7 +17,7 @@ The purpose of this project is to:
 ## Prerequisites
 - Python version 3.11.5 installed on your system.
 
-# Installation
+## Installation
 
 1. Fork the project to create a copy of the project in your own Github account.
 2. Clone the repository to your local machine:
@@ -51,7 +51,7 @@ On Windows:
     pip install -r requirements.txt
   ```
 
-# Usage
+## Usage
 
 1. Run the script to process the data on your IDE's command line:
 
@@ -61,7 +61,7 @@ python main.py
 
 2. Check the generated files in the "output" folder.
 
-# Contributing
+## Contributing
 
 If you'd like to contribute to this project, please fork the repository, create a new branch for your changes, and submit a pull request. Contributions, bug reports, and feature requests are welcome!
 
