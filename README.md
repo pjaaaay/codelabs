@@ -66,7 +66,7 @@ The purpose of this project is to:
 If you'd like to contribute to this project:
 - Please fork the repository
 - Create a new branch for your changes
-- Submit a pull request. 
+- Submit a [pull request](https://github.com/mikemwai/codelabs/pulls). 
 
 Contributions, bug reports, and feature requests are welcome!
 
