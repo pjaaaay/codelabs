@@ -1,4 +1,4 @@
-# Student Data Processing Project
+# codelabs (Student Data Processing Project)
 
 ## Overview
 
@@ -31,7 +31,7 @@ The purpose of this project is to:
    python3 -m venv myenv
  ```
 
-3. Activate youur virtual environment:
+3. Activate your virtual environment:
 
    On Windows:
 
@@ -39,7 +39,7 @@ The purpose of this project is to:
    myenv\Scripts\activate
  ```
 
-   On Mac:
+On Mac:
 
  ```sh 
    source myenv/bin/activate
