@@ -28,7 +28,7 @@ The purpose of this project is to:
 2. Navigate to the project directory and create a virtual environment on your local machine through the command line: 
 
  ```sh 
-   python3 -m venv myenv
+   py -m venv myenv
  ```
 
 3. Activate your virtual environment:
