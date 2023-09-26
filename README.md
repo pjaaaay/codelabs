@@ -19,7 +19,7 @@ The purpose of this project is to:
 
 ## Installation
 
-1. Clone the forked repository to your local machine.
+1. Clone the repository on your local machine.
 
  ```sh 
    https://github.com/mikemwai/codelabs.git
