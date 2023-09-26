@@ -33,13 +33,13 @@ The purpose of this project is to:
 
 3. Activate your virtual environment:
 
-   On Windows:
+  - On Windows:
 
  ```sh 
    myenv\Scripts\activate
  ```
 
-   On Mac:
+  - On Mac:
 
  ```sh 
    source myenv/bin/activate
