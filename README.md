@@ -20,12 +20,7 @@ The purpose of this project is to:
 ## Installation
 
 1. Fork the project to create a copy of the project in your own Github account.
-2. Clone the repository to your local machine:
- 
- ```sh 
-  https://github.com/mikemwai/codelabs.git
- ```
-
+2. Clone the forked repository to your local machine:
 3. Navigate to the project directory and create a virtual environment on your local machine: 
 
  ```sh 
