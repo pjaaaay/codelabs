@@ -25,7 +25,7 @@ The purpose of this project is to:
    https://github.com/mikemwai/codelabs.git
  ```
 
-2. Navigate to the project directory and create a virtual environment on your local machine: 
+2. Navigate to the project directory and create a virtual environment on your local machine through the command line: 
 
  ```sh 
    python3 -m venv myenv
