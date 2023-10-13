@@ -22,7 +22,7 @@ The purpose of this project is to:
 1. Clone the repository on your local machine.
 
  ```sh 
-   https://github.com/mikemwai/codelabs.git
+   git clone https://github.com/mikemwai/codelabs.git
  ```
 
 2. Navigate to the project directory and create a virtual environment on your local machine through the command line: 
