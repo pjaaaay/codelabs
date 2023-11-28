@@ -1,33 +1,69 @@
-# Codelabs
+# codelabs (Student Data Processing Project)
 
-They are a type of interactive and hands-on learning resource designed to help individuals learn how to program, develop software, or work with specific technologies or tools. They are commonly used in the field of computer science and software development as a practical way to teach concepts, skills, and best practices.
+## Overview
 
-## Requirements
-Ensure that you have the following libraries intsalled in your environment:
-1. Pandas
-2. Numpy
-3. LaBSE stretch
-4. Tensorflow
-5. Google API -for cloud storage
-6. Transormer
-7. Pytorch-torch
-8. bert4keras
+The Student Data Processing Project is a Python-based data processing and analysis project designed to handle student data and perform various operations on it. This README.md file provides an overview of the project, its purpose, and instructions on how to use it.
 
-To install the project do the following:
-1. Fork the project to create a copy of the project in your own Github account.
-2. Clone the repository into your local machine.
- 
+## Purpose
+
+The purpose of this project is to:
+
+- Parse an Excel file containing student data.
+- Generate unique email addresses for students.
+- Remove special characters from email addresses.
+- Perform data analysis, including categorizing students by gender and identifying similarities in student names.
+- Create backup files on Google Drive for data security.
+
+## Prerequisites
+- Python version 3.11.5 installed on your system.
+
+## Installation
+
+1. Clone the repository on your local machine.
+
  ```sh 
-  https://github.com/nellymururi/codelabs.git
+   git clone https://github.com/mikemwai/codelabs.git
  ```
-3. Ensure you have installed openpyxl before running your code in your local machine through the following commmand: 
+
+2. Navigate to the project directory and create a virtual environment on your local machine through the command line: 
 
  ```sh 
- pip install openpyxl
-  ```
+   py -m venv myenv
+ ```
 
-4. Ensure that you select the same environment for your IDE's interpreter in which you have previously installed the mentioned libraries.
+3. Activate your virtual environment:
 
-5.  
+  - On Windows:
 
+ ```sh 
+   myenv\Scripts\activate
+ ```
 
+  - On Mac:
+
+ ```sh 
+   source myenv/bin/activate
+ ```
+
+4. Install project dependencies on your virtual environment:
+
+ ```sh
+   pip install -r requirements.txt
+ ```
+
+## Usage
+
+1. Run main.py to process the data.
+2. Check the generated files in the "output" folder in the root directory.
+
+## Contributing
+
+If you'd like to contribute to this project:
+- Please fork the repository
+- Create a new branch for your changes
+- Submit a [pull request](https://github.com/mikemwai/codelabs/pulls) 
+
+Contributions, bug reports, and feature requests are welcome!
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
